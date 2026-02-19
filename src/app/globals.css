@@ -1,26 +1,189 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: #0A1F1A;
+  --color-foreground: #E8E8E8;
+  --color-emerald: #10B981;
+  --color-emerald-dark: #059669;
+  --color-emerald-light: #34D399;
+  --color-gold: #E8B923;
+  --color-gold-light: #F5D060;
+  --color-dark: #0A1F1A;
+  --color-dark-card: #0F2E26;
+  --color-dark-surface: #143D33;
+  --color-dark-border: #1A4D40;
+  --color-muted: #94A3B8;
+  --font-sans: "Inter", "Noto Sans Bengali", sans-serif;
+  --font-bengali: "Noto Sans Bengali", sans-serif;
+  --font-arabic: "Amiri", serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* === Islamic Geometric Pattern Background === */
+.islamic-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2310B981' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* === Glassmorphism === */
+.glass {
+  background: rgba(15, 46, 38, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+}
+
+.glass-card {
+  background: rgba(15, 46, 38, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(16, 185, 129, 0.1);
+  border-radius: 1rem;
+}
+
+/* === Glow Effects === */
+.glow-emerald {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3), 0 0 60px rgba(16, 185, 129, 0.1);
+}
+
+.glow-gold {
+  box-shadow: 0 0 20px rgba(232, 185, 35, 0.3), 0 0 60px rgba(232, 185, 35, 0.1);
+}
+
+.text-glow-emerald {
+  text-shadow: 0 0 20px rgba(16, 185, 129, 0.5), 0 0 40px rgba(16, 185, 129, 0.3);
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 20px rgba(232, 185, 35, 0.5), 0 0 40px rgba(232, 185, 35, 0.3);
+}
+
+/* === Countdown Glow Animation === */
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    text-shadow: 0 0 20px rgba(16, 185, 129, 0.5), 0 0 40px rgba(16, 185, 129, 0.2);
+  }
+
+  50% {
+    text-shadow: 0 0 30px rgba(16, 185, 129, 0.8), 0 0 60px rgba(16, 185, 129, 0.4);
   }
 }
 
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* === Crescent Moon Glow === */
+@keyframes crescent-glow {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 15px rgba(232, 185, 35, 0.6));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 30px rgba(232, 185, 35, 0.9));
+  }
+}
+
+.animate-crescent {
+  animation: crescent-glow 3s ease-in-out infinite;
+}
+
+/* === Gradient Borders === */
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #10B981, #E8B923);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* === Scrollbar === */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A1F1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1A4D40;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #10B981;
+}
+
+/* === Body === */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #0A1F1A;
+  color: #E8E8E8;
+  font-family: "Inter", "Noto Sans Bengali", sans-serif;
+  overflow-x: hidden;
+}
+
+/* === Arabesque Divider === */
+.arabesque-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #10B981, #E8B923, #10B981, transparent);
+  opacity: 0.5;
+}
+
+/* === Tasbeeh Bead Animation === */
+@keyframes bead-press {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.92);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-bead {
+  animation: bead-press 0.15s ease-out;
+}
+
+/* === Shimmer Loading === */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #0F2E26 25%, #1A4D40 50%, #0F2E26 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* === Leaflet Fix === */
+.leaflet-container {
+  background: #0A1F1A !important;
+  border-radius: 1rem;
+}
+
+/* === Mobile Nav Safe Area === */
+.pb-safe {
+  padding-bottom: calc(5rem + env(safe-area-inset-bottom));
 }
