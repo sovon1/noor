@@ -46,45 +46,63 @@
 ## <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width="30"> &nbsp;Feature Overview
 
 <div align="center">
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    🌙 NOAKHALI NOOR                         │
-├─────────────┬───────────────┬───────────────┬───────────────┤
-│  ⏱️ Smart    │  📅 Ramadan   │  🕋 5-Waqt    │  📍 Auto      │
-│  Countdown  │  Calendar     │  Prayer Times │  Location     │
-├─────────────┼───────────────┼───────────────┼───────────────┤
-│  🧭 Qibla    │  💰 Zakat     │  📖 Quran     │  📿 Digital   │
-│  Compass    │  Calculator   │  Reader       │  Tasbeeh      │
-├─────────────┼───────────────┼───────────────┼───────────────┤
-│  🤲 Duas &   │  🕌 Mosque    │  ⚡ PWA       │  🌑 Dark      │
-│  Tasbeeh    │  Finder       │  Offline      │  Mode UI      │
-└─────────────┴───────────────┴───────────────┴───────────────┘
-```
-
+<table>
+<tr>
+<td align="center" width="25%">
+<img src="https://img.shields.io/badge/⏱️_Smart_Countdown-10B981?style=for-the-badge&labelColor=064e3b" /><br />
+<sub>Live Sehri & Iftar countdown<br />with Bangla numerals</sub>
+</td>
+<td align="center" width="25%">
+<img src="https://img.shields.io/badge/📅_Ramadan_Calendar-10B981?style=for-the-badge&labelColor=064e3b" /><br />
+<sub>Full 30-day schedule<br />with today highlighting</sub>
+</td>
+<td align="center" width="25%">
+<img src="https://img.shields.io/badge/🕋_Prayer_Times-10B981?style=for-the-badge&labelColor=064e3b" /><br />
+<sub>5-waqt Salah for<br />all 9 Upazilas</sub>
+</td>
+<td align="center" width="25%">
+<img src="https://img.shields.io/badge/📍_Auto_Location-10B981?style=for-the-badge&labelColor=064e3b" /><br />
+<sub>GPS-based Upazila<br />detection (Haversine)</sub>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://img.shields.io/badge/🧭_Qibla_Compass-fbbf24?style=for-the-badge&labelColor=78350f" /><br />
+<sub>Real-time direction to<br />Kaaba via device sensors</sub>
+</td>
+<td align="center">
+<img src="https://img.shields.io/badge/💰_Zakat_Calculator-fbbf24?style=for-the-badge&labelColor=78350f" /><br />
+<sub>Gold, Silver, Cash &<br />Nisab threshold logic</sub>
+</td>
+<td align="center">
+<img src="https://img.shields.io/badge/📖_Quran_Reader-fbbf24?style=for-the-badge&labelColor=78350f" /><br />
+<sub>Arabic + Bangla + English<br />with smooth transitions</sub>
+</td>
+<td align="center">
+<img src="https://img.shields.io/badge/📿_Digital_Tasbeeh-fbbf24?style=for-the-badge&labelColor=78350f" /><br />
+<sub>Haptic counter with<br />progress & vibration</sub>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://img.shields.io/badge/🤲_Duas_Collection-8B5CF6?style=for-the-badge&labelColor=2d1b69" /><br />
+<sub>Categorized Ramadan<br />& daily Duas</sub>
+</td>
+<td align="center">
+<img src="https://img.shields.io/badge/🕌_Mosque_Finder-8B5CF6?style=for-the-badge&labelColor=2d1b69" /><br />
+<sub>Interactive Leaflet map<br />with markers & directions</sub>
+</td>
+<td align="center">
+<img src="https://img.shields.io/badge/⚡_PWA_Offline-8B5CF6?style=for-the-badge&labelColor=2d1b69" /><br />
+<sub>Installable on any<br />device, works offline</sub>
+</td>
+<td align="center">
+<img src="https://img.shields.io/badge/🌑_Glassmorphism_UI-8B5CF6?style=for-the-badge&labelColor=2d1b69" /><br />
+<sub>Cinematic dark theme<br />with translucent cards</sub>
+</td>
+</tr>
+</table>
 </div>
-
-<br />
-
-<details>
-<summary><b>🎯 Core Modules — Click to expand</b></summary>
-
-<br />
-
-| Module | Description | Tech Used |
-|:---|:---|:---|
-| **⏱️ Sehri/Iftar Countdown** | Real-time countdown timer with Bangla numerals, auto-updates every second | `setInterval`, `date-fns` |
-| **📅 Ramadan Calendar** | Full 30-day calendar with today-highlighting and Sehri/Iftar for each day | Static data + dynamic rendering |
-| **🕋 Prayer Times** | 5-waqt Salah schedule for all 9 Upazilas of Noakhali | Pre-computed astronomical data |
-| **📍 Geolocation** | Auto-detects nearest Upazila using `navigator.geolocation` | Haversine formula |
-| **🧭 Qibla Compass** | Animated compass needle pointing to Kaaba (21.4225°N, 39.8262°E) | `DeviceOrientationEvent`, spherical trig |
-| **💰 Zakat Calculator** | Asset-based calculator with Nisab threshold (Gold/Silver standard) | Custom financial logic |
-| **📖 Quran Reader** | Surah list → detail view with Arabic, Bangla, English | `AnimatePresence` transitions |
-| **📿 Digital Tasbeeh** | Counter with vibration feedback, save/load, progress visualization | `navigator.vibrate()` |
-| **🤲 Duas Collection** | Categorized Duas with Arabic text, transliteration, and meaning | Tabbed UI with search |
-| **🕌 Mosque Finder** | Interactive Leaflet map with mosque markers and directions | `react-leaflet` |
-
-</details>
 
 <br />
 
