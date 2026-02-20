@@ -26,6 +26,12 @@
 &nbsp;
 <a href="https://github.com/sovon1/noor/issues"><img src="https://img.shields.io/github/issues/sovon1/noor?style=social" /></a>
 
+<br /><br />
+
+<a href="https://noakhalinoor.app"><img src="https://img.shields.io/badge/🌐_Live_App-noakhalinoor.app-10B981?style=for-the-badge&labelColor=064e3b" /></a>
+
+[🌐 Visit App](https://noakhalinoor.app) · [🐛 Report Bug](https://github.com/sovon1/noor/issues) · [✨ Request Feature](https://github.com/sovon1/noor/issues)
+
 </div>
 
 <br />
