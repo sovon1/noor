@@ -111,10 +111,10 @@ export default function QiblaPage() {
 
     // The rotation for the compass needle
     // If compass is active: rotate by (qiblaAngle - compassHeading) so the needle points to Qibla
-    // If compass unavailable: show static angle
+    // If compass unavailable: show static Qibla angle so needle points toward Makkah
     const needleRotation = compassHeading !== null
         ? qiblaAngle - compassHeading
-        : 0;
+        : qiblaAngle;
 
     const compassRotation = compassHeading !== null
         ? -compassHeading
@@ -342,16 +342,23 @@ export default function QiblaPage() {
                         <motion.div
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="mt-6 bg-emerald-900/20 border border-emerald-900/30 rounded-xl p-4 w-full"
+                            className="mt-6 bg-emerald-900/20 border border-emerald-900/30 rounded-xl p-5 w-full"
                         >
-                            <h3 className="text-sm font-bold text-emerald-400 mb-2 flex items-center gap-2" style={{ fontFamily: "Noto Sans Bengali" }}>
+                            <h3 className="text-sm font-bold text-emerald-400 mb-3 flex items-center gap-2" style={{ fontFamily: "Noto Sans Bengali" }}>
                                 <Navigation size={14} />
                                 ম্যানুয়াল নির্দেশনা
                             </h3>
-                            <p className="text-xs text-gray-300 leading-relaxed" style={{ fontFamily: "Noto Sans Bengali" }}>
-                                নোয়াখালী থেকে কিবলার দিক প্রায় <strong className="text-gold">{toBanglaNumber(Math.round(qiblaAngle))}°</strong> (পশ্চিম দিকে)।
-                                সূর্যাস্তের দিকে সামান্য ডানে মুখ করুন — এটিই কিবলার আনুমানিক দিক।
-                            </p>
+                            <div className="space-y-2">
+                                <p className="text-xs text-gray-300 leading-relaxed" style={{ fontFamily: "Noto Sans Bengali" }}>
+                                    🕋 নোয়াখালী থেকে কিবলার দিক প্রায় <strong className="text-gold text-sm">{toBanglaNumber(Math.round(qiblaAngle))}°</strong> (পশ্চিম দিকে)।
+                                </p>
+                                <p className="text-xs text-gray-400 leading-relaxed" style={{ fontFamily: "Noto Sans Bengali" }}>
+                                    উপরের কম্পাসে 🕋 চিহ্নটি কিবলার দিক নির্দেশ করছে। সূর্যাস্তের দিকে সামান্য ডানে মুখ করুন — এটিই কিবলার আনুমানিক দিক।
+                                </p>
+                                <p className="text-[10px] text-gray-500 mt-2 pt-2 border-t border-emerald-900/20" style={{ fontFamily: "Noto Sans Bengali" }}>
+                                    📱 মোবাইল ফোনে এই পেজ ওপেন করলে কম্পাস স্বয়ংক্রিয়ভাবে সক্রিয় হবে।
+                                </p>
+                            </div>
                         </motion.div>
                     )}
 
