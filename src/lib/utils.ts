@@ -12,6 +12,7 @@ export interface CountdownTime {
     seconds: number;
     label: string;
     isIftar: boolean;
+    sehriExpired: boolean;
 }
 
 export function getCountdown(sehriTime: string, iftarTime: string): CountdownTime {
@@ -24,6 +25,7 @@ export function getCountdown(sehriTime: string, iftarTime: string): CountdownTim
     let target: Date;
     let label: string;
     let isIftar: boolean;
+    let sehriExpired: boolean = false;
 
     if (now < sehri) {
         target = sehri;
@@ -33,6 +35,7 @@ export function getCountdown(sehriTime: string, iftarTime: string): CountdownTim
         target = iftar;
         label = "ইফতার পর্যন্ত";
         isIftar = true;
+        sehriExpired = true;
     } else {
         // After iftar, count to next day sehri
         const tomorrow = new Date(now);
@@ -48,7 +51,7 @@ export function getCountdown(sehriTime: string, iftarTime: string): CountdownTim
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-    return { hours, minutes, seconds, label, isIftar };
+    return { hours, minutes, seconds, label, isIftar, sehriExpired };
 }
 
 // ======= localStorage Helpers =======

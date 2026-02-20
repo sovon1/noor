@@ -134,6 +134,13 @@ export default function HomePage() {
                 transition={{ delay: 1.3 }}
                 className="glass-card p-6 md:p-8 max-w-md mx-auto glow-emerald"
               >
+                {countdown.sehriExpired && (
+                  <div className="bg-orange-900/20 border border-orange-500/30 rounded-lg px-3 py-2 mb-4 text-center">
+                    <p className="text-orange-400 text-sm font-medium" style={{ fontFamily: "Noto Sans Bengali" }}>
+                      ⚠️ সেহরি খাওয়ার সময় শেষ হয়েছে
+                    </p>
+                  </div>
+                )}
                 <p className="text-emerald-300 text-sm mb-3 flex items-center justify-center gap-2" style={{ fontFamily: "Noto Sans Bengali" }}>
                   <Clock size={16} />
                   {countdown.label}
@@ -160,7 +167,7 @@ export default function HomePage() {
                   <div className="flex justify-center gap-6 mt-5 pt-4 border-t border-emerald-900/30">
                     <div className="text-center">
                       <p className="text-[10px] text-gray-400" style={{ fontFamily: "Noto Sans Bengali" }}>সেহরি শেষ</p>
-                      <p className="text-lg font-semibold text-white">{formatTime12(todayPrayer.sehriEnd)}</p>
+                      <p className={`text-lg font-semibold ${countdown.sehriExpired ? "text-gray-500 line-through" : "text-white"}`}>{formatTime12(todayPrayer.sehriEnd)}</p>
                     </div>
                     <div className="text-center">
                       <p className="text-[10px] text-gray-400" style={{ fontFamily: "Noto Sans Bengali" }}>ইফতার</p>
