@@ -45,7 +45,9 @@ export function getCountdown(sehriTime: string, iftarTime: string): CountdownTim
         target = iftar;
         label = "ইফতার পর্যন্ত";
         isIftar = true;
-        sehriExpired = true;
+        // Show sehri expired banner only for 30 minutes after sehri ends
+        const msSinceSehri = now.getTime() - sehri.getTime();
+        sehriExpired = msSinceSehri <= 30 * 60 * 1000;
     } else {
         // After iftar, count to next day sehri
         const tomorrow = new Date(now);
