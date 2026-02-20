@@ -39,7 +39,7 @@ function generateRamadanTimes(offsetMin: number = 0): DayPrayerTime[] {
     const baseTimes = [
         { day: 1, date: "2026-02-19", fajr: "05:05", sunrise: "06:22", dhuhr: "12:09", asr: "15:36", maghrib: "17:56", isha: "19:11", sehriEnd: "04:55", iftarStart: "17:56" },
         { day: 2, date: "2026-02-20", fajr: "05:04", sunrise: "06:21", dhuhr: "12:09", asr: "15:36", maghrib: "17:57", isha: "19:12", sehriEnd: "04:54", iftarStart: "17:57" },
-        { day: 3, date: "2026-02-21", fajr: "05:03", sunrise: "06:20", dhuhr: "12:09", asr: "15:37", maghrib: "17:58", isha: "19:12", sehriEnd: "04:53", iftarStart: "17:58" },
+        { day: 3, date: "2026-02-21", fajr: "05:03", sunrise: "06:20", dhuhr: "12:09", asr: "15:37", maghrib: "17:58", isha: "19:12", sehriEnd: "05:07", iftarStart: "17:58" },
         { day: 4, date: "2026-02-22", fajr: "05:02", sunrise: "06:19", dhuhr: "12:08", asr: "15:37", maghrib: "17:58", isha: "19:13", sehriEnd: "04:52", iftarStart: "17:58" },
         { day: 5, date: "2026-02-23", fajr: "05:01", sunrise: "06:18", dhuhr: "12:08", asr: "15:38", maghrib: "17:59", isha: "19:13", sehriEnd: "04:51", iftarStart: "17:59" },
         { day: 6, date: "2026-02-24", fajr: "05:00", sunrise: "06:17", dhuhr: "12:08", asr: "15:38", maghrib: "18:00", isha: "19:14", sehriEnd: "04:50", iftarStart: "18:00" },
