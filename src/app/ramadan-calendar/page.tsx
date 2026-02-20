@@ -6,7 +6,7 @@ import { Calendar, Moon, Sun, Sunrise, Sunset } from "lucide-react";
 import { UPAZILAS, PRAYER_TIMES, type CalculationMethod } from "@/data/prayer-times";
 import { formatTime12, toBanglaNumber, getStoredItem, setStoredItem } from "@/lib/utils";
 
-const RAMADAN_START = new Date("2026-02-18");
+const RAMADAN_START = new Date("2026-02-19");
 const BANGLA_MONTHS = ["ফেব্রুয়ারি", "মার্চ"];
 
 function getRamadanDay(): number {
@@ -55,8 +55,8 @@ export default function RamadanCalendarPage() {
                                 key={u.id}
                                 onClick={() => { setUpazila(u.id); setStoredItem("selectedUpazila", u.id); }}
                                 className={`px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${upazila === u.id
-                                        ? "bg-emerald-600/30 text-emerald-300 border border-emerald-500/40"
-                                        : "text-gray-400 hover:bg-emerald-900/20"
+                                    ? "bg-emerald-600/30 text-emerald-300 border border-emerald-500/40"
+                                    : "text-gray-400 hover:bg-emerald-900/20"
                                     }`}
                                 style={{ fontFamily: "Noto Sans Bengali" }}
                             >
@@ -82,12 +82,12 @@ export default function RamadanCalendarPage() {
                                 transition={{ delay: i * 0.02 }}
                                 onClick={() => setSelectedDay(isSelected ? null : day.day)}
                                 className={`relative p-3 rounded-xl text-center transition-all duration-200 ${isSelected
-                                        ? "bg-emerald-600/40 border-2 border-emerald-400 glow-emerald"
-                                        : isToday
-                                            ? "bg-gold/10 border border-gold/40"
-                                            : day.day < todayRamadan
-                                                ? "glass-card opacity-60"
-                                                : "glass-card hover:bg-emerald-900/20"
+                                    ? "bg-emerald-600/40 border-2 border-emerald-400 glow-emerald"
+                                    : isToday
+                                        ? "bg-gold/10 border border-gold/40"
+                                        : day.day < todayRamadan
+                                            ? "glass-card opacity-60"
+                                            : "glass-card hover:bg-emerald-900/20"
                                     }`}
                             >
                                 {isToday && (
