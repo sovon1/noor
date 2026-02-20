@@ -18,7 +18,8 @@ export default function PrayerTimesPage() {
 
     const times = PRAYER_TIMES[upazila]?.[method] || [];
     const today = getTodayPrayer(upazila, method);
-    const todayDate = new Date().toISOString().split("T")[0];
+    const _now = new Date();
+    const todayDate = `${_now.getFullYear()}-${String(_now.getMonth() + 1).padStart(2, "0")}-${String(_now.getDate()).padStart(2, "0")}`;
     const upazilaInfo = UPAZILAS.find((u) => u.id === upazila);
 
     const requestNotification = async () => {

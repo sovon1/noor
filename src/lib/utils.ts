@@ -5,6 +5,16 @@ export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
 }
 
+// ======= Date Helpers =======
+function getLocalDateStr(date: Date): string {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, "0");
+    const d = String(date.getDate()).padStart(2, "0");
+    return `${y}-${m}-${d}`;
+}
+
+export { getLocalDateStr };
+
 // ======= Countdown Helpers =======
 export interface CountdownTime {
     hours: number;
@@ -17,7 +27,7 @@ export interface CountdownTime {
 
 export function getCountdown(sehriTime: string, iftarTime: string): CountdownTime {
     const now = new Date();
-    const today = now.toISOString().split("T")[0];
+    const today = getLocalDateStr(now);
 
     const sehri = new Date(`${today}T${sehriTime}:00`);
     const iftar = new Date(`${today}T${iftarTime}:00`);
@@ -40,7 +50,7 @@ export function getCountdown(sehriTime: string, iftarTime: string): CountdownTim
         // After iftar, count to next day sehri
         const tomorrow = new Date(now);
         tomorrow.setDate(tomorrow.getDate() + 1);
-        const tomorrowStr = tomorrow.toISOString().split("T")[0];
+        const tomorrowStr = getLocalDateStr(tomorrow);
         target = new Date(`${tomorrowStr}T${sehriTime}:00`);
         label = "সেহরি পর্যন্ত";
         isIftar = false;
